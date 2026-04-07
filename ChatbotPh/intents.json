@@ -1,0 +1,22 @@
+{
+    "intents": [
+      {
+        "tag": "saudacao",
+        "patterns": ["Olá", "Oi", "Bom dia", "Tudo bem?", "Ei"],
+        "responses": ["Olá! Como posso ajudar?", "Oi! Tudo bem por aqui."],
+        "context": [""]
+      },
+      {
+        "tag": "despedida",
+        "patterns": ["Tchau", "Até logo", "Sair", "Adeus", "Obrigado por tudo"],
+        "responses": ["Até a próxima!", "Tchau! Se precisar, estarei aqui."],
+        "context": [""]
+      },
+      {
+        "tag": "financeiro",
+        "patterns": ["Como vai meu saldo?", "Quanto eu gastei?", "Extrato de ontem"],
+        "responses": ["Vou verificar seu saldo agora.", "Seu gasto total foi..."],
+        "context": [""]
+      }
+    ]
+  }
