@@ -1,0 +1,294 @@
+{
+    "intencoes": [
+        {
+            "tag": "saudacao",
+            "padroes": [
+                "Oi", "Olá", "Bom dia", "Boa tarde", "Boa noite",
+                "Tudo bem?", "Hey", "Salve", "Eae", "Fala aí",
+                "Oi tudo bem?", "Olá como vai?", "Oi sumido", "Alô",
+                "Boas!", "Como você está?", "Tudo certo?", "Ei, tudo bem?"
+            ],
+            "respostas": [
+                "Olá! Como posso ajudar?",
+                "Oi! Tudo ótimo por aqui, e você?",
+                "Ei, que bom te ver! No que posso ajudar?",
+                "Olá! Estou aqui pra ajudar no que precisar.",
+                "Oi oi! Pronto pra conversar!"
+            ]
+        },
+        {
+            "tag": "despedidas",
+            "padroes": [
+                "Tchau", "Até mais", "Até logo", "Até amanhã",
+                "Xau", "Até", "Falou", "Abraços", "Vou embora",
+                "Preciso ir", "Até a próxima", "Boa noite então",
+                "Vou sair", "Nos vemos", "Até mais tarde"
+            ],
+            "respostas": [
+                "Tchau! Foi ótimo conversar com você!",
+                "Até logo! Volte sempre que precisar.",
+                "Boa sorte! Estarei aqui se precisar de mim.",
+                "Até mais! Cuida-se!",
+                "Falou! Qualquer coisa é só chamar."
+            ]
+        },
+        {
+            "tag": "agradecimentos",
+            "padroes": [
+                "Muito obrigado", "Obrigado", "Valeu", "Obrigada",
+                "Agradeço", "Muito grato", "Que gentil", "Você é ótimo",
+                "Você me ajudou muito", "Me ajudou demais", "Valeu mesmo",
+                "Obrigadão", "Muito obrigada mesmo", "Grato"
+            ],
+            "respostas": [
+                "De nada! Fico feliz em ajudar.",
+                "Disponha! Foi um prazer.",
+                "Imagina! Pra isso estou aqui.",
+                "Que nada, foi fácil! Precisando é só falar.",
+                "Fico feliz que tenha resolvido!"
+            ]
+        },
+        {
+            "tag": "apresentacao",
+            "padroes": [
+                "Qual seu nome", "Quem é você", "Sobre você",
+                "Me fala de você", "O que você é", "Você é um robô",
+                "Quem te criou", "Como você se chama", "Você tem nome",
+                "O que você faz", "Qual é o seu nome", "Você é humano",
+                "Você é uma IA", "Me apresenta você mesmo"
+            ],
+            "respostas": [
+                "Meu nome é Chatinho! Sou um chatbot criado para conversar e ajudar no que puder.",
+                "Eu sou o Chatinho, seu amiguinho virtual! Fui feito com Keras e muito carinho.",
+                "Me chamo Chatinho! Sou uma inteligência artificial aqui pra bater um papo.",
+                "Olá! Sou o Chatinho, um robô de conversas. Posso ajudar com várias coisas, é só perguntar!"
+            ]
+        },
+        {
+            "tag": "alies_ben_10",
+            "padroes": [
+                "Qual o melhor alien do Ben 10", "Me fala de um alien do Ben 10",
+                "Qual seu alien favorito do Ben 10", "Ben 10", "Fala de Ben 10",
+                "Aliens do Ben 10", "Você conhece Ben 10", "Qual alien do Ben 10 é mais forte",
+                "Me conta sobre Ben 10", "Ben 10 aliens", "Alien favorito"
+            ],
+            "respostas": [
+                "Meu favorito é o XLR8, aquela velocidade é incrível!",
+                "Adoro o Quatro-Braços, quatro braços é melhor que dois!",
+                "O Diamante é incrível, poder se transformar em cristal não tem preço.",
+                "Chama é épico, controlar o fogo assim... demais!",
+                "Cromático é subestimado, mas é um dos mais versáteis.",
+                "Gigante abre muito espaço literalmente, haha! Gosto muito dele."
+            ]
+        },
+        {
+            "tag": "piada",
+            "padroes": [
+                "Me conta uma piada", "Fala uma piada", "Tem alguma piada",
+                "Me faz rir", "Conta uma piada", "Sabe alguma piada",
+                "Piada boa", "Me anima com uma piada", "Fala algo engraçado",
+                "Me conta algo engraçado", "Quero rir", "Piada agora"
+            ],
+            "respostas": [
+                "Por que o computador foi ao médico? Porque estava com vírus!",
+                "O que o zero disse pro oito? Que cinto bonito!",
+                "Por que o livro de matemática estava triste? Tinha muitos problemas.",
+                "Qual é o animal mais antigo? A zebra, porque é preto e branco!",
+                "Por que o esqueleto não briga? Porque não tem estômago pra isso!"
+            ]
+        },
+        {
+            "tag": "humor",
+            "padroes": [
+                "Estou triste", "Estou mal", "Tô pra baixo", "Dia ruim",
+                "Tô chateado", "Me anima", "Me alegra", "Preciso de motivação",
+                "Tô desanimado", "Que dia difícil", "Estou cansado",
+                "Tô desmotivado", "Preciso de um incentivo"
+            ],
+            "respostas": [
+                "Ei, dias difíceis passam! Você é mais forte do que imagina.",
+                "Respira fundo! Cada dia difícil é uma chance de virar o jogo.",
+                "Você chegou até aqui, isso já prova muita coisa! Vai que vai!",
+                "Todo mundo tem dias assim. O importante é continuar. Vai lá!",
+                "Acredita em você! E se precisar conversar, estou aqui."
+            ]
+        },
+        {
+            "tag": "clima",
+            "padroes": [
+                "Como está o tempo", "Vai chover hoje", "Está frio",
+                "Está calor", "Como está o clima", "Preciso de guarda-chuva",
+                "Qual a previsão do tempo", "Vai fazer sol", "Tempo hoje",
+                "Clima de hoje", "Vai ter chuva"
+            ],
+            "respostas": [
+                "Infelizmente não consigo verificar o clima em tempo real, mas você pode checar no Google!",
+                "Não tenho acesso à previsão do tempo, mas o app de clima do seu celular resolve isso rapidinho!",
+                "Para isso você precisaria de um sistema conectado à internet. Aqui no meu mundo sempre está ótimo!"
+            ]
+        },
+        {
+            "tag": "entretenimento",
+            "padroes": [
+                "O que fazer de divertido", "Como me entreter", "Indicação de série",
+                "Me indica um filme", "Que jogo jogar", "O que assistir",
+                "Tem alguma dica de lazer", "Me recomenda algo", "Tô entediado",
+                "O que posso fazer", "Me sugere algo pra fazer"
+            ],
+            "respostas": [
+                "Que tal assistir uma série nova? Breaking Bad e Dark são incríveis!",
+                "Jogos como Minecraft ou Stardew Valley são ótimos pra relaxar.",
+                "Que tal ler um livro? O Guia do Mochileiro das Galáxias é divertidíssimo!",
+                "Pode tentar aprender algo novo no YouTube, como tocar um instrumento!",
+                "Maratonar uma série clássica como Friends nunca decepciona!"
+            ]
+        },
+        {
+            "tag": "capacidades",
+            "padroes": [
+                "O que você sabe fazer", "Quais são suas funções", "No que você ajuda",
+                "Qual sua utilidade", "Você consegue me ajudar", "O que você pode fazer",
+                "Me diz o que você faz", "Quais são seus recursos", "Você é útil",
+                "Pra que você serve", "Suas funcionalidades"
+            ],
+            "respostas": [
+                "Posso conversar, contar piadas, dar dicas de entretenimento, falar sobre Ben 10 e muito mais!",
+                "Estou aqui pra bater papo, animar seu dia e responder o que puder!",
+                "Converso sobre vários assuntos: humor, entretenimento, curiosidades e até aliens do Ben 10!",
+                "Sou bom em conversar e ajudar no que estiver ao meu alcance. Pode perguntar!"
+            ]
+        },
+        {
+            "tag": "elogio",
+            "padroes": [
+                "Você é muito bom", "Que chatbot incrível", "Gostei de você",
+                "Você é legal", "Adorei conversar", "Você é inteligente",
+                "Que ótimo chatbot", "Você é bacana", "Me surpreendeu",
+                "Muito bem feito", "Parabéns a quem te criou"
+            ],
+            "respostas": [
+                "Que gentil! Fico muito feliz com isso!",
+                "Obrigado! Você também é incrível!",
+                "Fico feliz que tenha gostado! Quer continuar conversando?",
+                "Isso me motiva muito! Pode perguntar mais o que quiser.",
+                "Que coisa boa de ouvir! Obrigado de verdade!"
+            ]
+        },
+        {
+            "tag": "curiosidades",
+            "padroes": [
+                "Me conta uma curiosidade", "Fala algo interessante", "Sabia que",
+                "Me ensina algo", "Curiosidade do dia", "Algo curioso",
+                "Tem alguma curiosidade legal", "Me surpreende", "Fala um fato",
+                "Um fato interessante", "Curiosidade aleatória"
+            ],
+            "respostas": [
+                "Você sabia que as abelhas podem reconhecer rostos humanos?",
+                "Curiosidade: o mel nunca estraga. Mel de 3000 anos atrás ainda é comestível!",
+                "Sabia que os polvos têm três corações e sangue azul?",
+                "Fato curioso: um dia em Vênus é mais longo que um ano em Vênus!",
+                "Você sabia que as borboletas sentem o gosto com os pés?"
+            ]
+        }
+        ,
+        {
+            "tag": "sw_personagens",
+            "padroes": [
+                "Qual o melhor personagem de Star Wars", "Me fala de um personagem de Star Wars",
+                "Quem é seu favorito de Star Wars", "Personagens de Star Wars",
+                "Fala sobre o Darth Vader", "Quem é Luke Skywalker", "Me conta sobre o Yoda",
+                "Fala do Han Solo", "Quem é a Princesa Leia", "Me fala do Obi-Wan",
+                "Personagem Star Wars", "Herói de Star Wars", "Vilão de Star Wars"
+            ],
+            "respostas": [
+                "Darth Vader é um dos vilões mais icônicos da história! Aquela respiração então...",
+                "Yoda é incrível! Sábio, poderoso e fala de um jeito único, ele fala.",
+                "Luke Skywalker é a definição de herói improvável. De fazendeiro a Mestre Jedi!",
+                "Han Solo é o cara! Atira primeiro, pergunta depois. Um contrabandista com coração de ouro.",
+                "Obi-Wan Kenobi é o Jedi mais equilibrado da saga. Mestre em tudo que faz.",
+                "A Princesa Leia é muito mais que uma princesa, ela é líder da Resistência!"
+            ]
+        },
+        {
+            "tag": "sw_lado_negro",
+            "padroes": [
+                "O que é o lado negro da Força", "Fala do lado sombrio", "Por que o lado negro é mais forte",
+                "O que atrai para o lado negro", "Diferença entre Jedi e Sith",
+                "O lado negro da força", "Sith ou Jedi", "Por que virar Sith",
+                "O lado negro vale a pena", "Poder do lado sombrio"
+            ],
+            "respostas": [
+                "O lado negro promete poder ilimitado, mas cobra um preço alto: paz, amor e equilíbrio.",
+                "Jedi buscam equilíbrio e harmonia. Sith alimentam raiva e ambição. Cada um escolhe seu caminho!",
+                "O lado negro seduz com soluções rápidas, mas o Mestre Yoda dizia: caminho mais fácil, nem sempre o correto.",
+                "Raiva, medo e ódio são a porta de entrada para o lado negro. Por isso os Jedi pregam a calma!",
+                "Sith acreditam que o conflito gera força. Jedi acreditam que a paz é força. E você, qual escolheria?"
+            ]
+        },
+        {
+            "tag": "sw_sabres_de_luz",
+            "padroes": [
+                "Me fala do sabre de luz", "Qual a cor do sabre de luz", "Sabre de luz azul",
+                "Sabre de luz vermelho", "O que significa a cor do sabre", "Sabre de luz verde",
+                "Sabre de luz roxo", "Quero saber sobre sabres de luz", "Sabre de luz favorito",
+                "Como funciona o sabre de luz", "Cores dos sabres de luz"
+            ],
+            "respostas": [
+                "O sabre azul é o mais clássico dos Jedi, símbolo de proteção e justiça!",
+                "O sabre vermelho é dos Sith, criado através de um ritual chamado sangramento do cristal.",
+                "O sabre verde representa sabedoria e conexão profunda com a Força. Yoda e Luke o usaram!",
+                "O sabre roxo é único do Mace Windu, um Jedi tão poderoso que podia usar técnicas dos dois lados.",
+                "Cada sabre é construído com um cristal Kyber, que reflete a essência de quem o porta. Incrível, né?"
+            ]
+        },
+        {
+            "tag": "sw_a_forca",
+            "padroes": [
+                "O que é a Força", "Fala sobre a Força", "Como a Força funciona",
+                "Que a Força esteja com você", "Que a força esteja com você",
+                "A força é real", "Poderes da Força", "O que dá pra fazer com a Força",
+                "Explicar a Força", "A Força de Star Wars"
+            ],
+            "respostas": [
+                "Que a Força esteja com você também! A Força é uma energia que permeia toda a galáxia.",
+                "A Força conecta todos os seres vivos. Com ela, Jedi e Sith realizam feitos incríveis!",
+                "Telecinese, leitura de mentes, visões do futuro... a Força tem poderes quase ilimitados!",
+                "Os midiclorianos são microorganismos que permitem sentir a Força. Quanto mais, maior a conexão!",
+                "A Força não é uma arma, é um guia. Pelo menos para os Jedi... os Sith pensam diferente."
+            ]
+        },
+        {
+            "tag": "sw_filmes",
+            "padroes": [
+                "Qual o melhor filme de Star Wars", "Me indica um filme de Star Wars",
+                "Ordem para assistir Star Wars", "Por onde começar Star Wars",
+                "Melhor trilogia de Star Wars", "Star Wars vale a pena assistir",
+                "Quantos filmes tem Star Wars", "Filmes de Star Wars", "Star Wars filme"
+            ],
+            "respostas": [
+                "O Episódio V, O Império Contra-Ataca, é considerado o melhor por muitos fãs. E com razão!",
+                "Para quem vai começar, recomendo pela ordem de lançamento: Episódios IV, V e VI primeiro!",
+                "São 12 filmes no total entre trilogias e histórias solo. Tem conteúdo pra muito tempo!",
+                "A trilogia original (IV, V e VI) é a base de tudo. Após, as prequelas (I, II e III) fazem mais sentido.",
+                "Rogue One é um filme solo incrível e subestimado! Acontece logo antes do Episódio IV."
+            ]
+        },
+        {
+            "tag": "sw_curiosidades",
+            "padroes": [
+                "Curiosidade de Star Wars", "Fato curioso de Star Wars", "Me surpreende com Star Wars",
+                "Algo interessante sobre Star Wars", "Me conta algo sobre Star Wars",
+                "Trivia de Star Wars", "Você sabe algo legal sobre Star Wars",
+                "Fato de Star Wars", "Novidade sobre Star Wars"
+            ],
+            "respostas": [
+                "O rugido do Chewbacca foi criado misturando sons de urso, leão, morsa e texugo!",
+                "A frase 'Que a Força esteja com você' foi inspirada na saudação militar 'que Deus esteja com você'.",
+                "O Yoda quase foi interpretado por um macaco treinado antes de virarem um fantoche!",
+                "O Darth Vader original tinha uma voz completamente diferente. James Earl Jones foi adicionado depois.",
+                "A galáxia de Star Wars tem mais de 400 bilhões de sistemas estelares. É muita galáxia!",
+                "O nome Yoda pode ter origem no sânscrito 'yoddha', que significa guerreiro. Faz sentido!"
+            ]
+        }
+    ]
+}
