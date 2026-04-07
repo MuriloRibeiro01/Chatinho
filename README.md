@@ -1,4 +1,4 @@
-# 🤖 Chatbot com Keras e NLTK
+# 🤖 Chatinho com Keras e NLTK
 
 Projeto acadêmico de um chatbot baseado em classificação de intenções, utilizando uma rede neural treinada com o framework **Keras** e pré-processamento de linguagem natural com **NLTK**.
 
