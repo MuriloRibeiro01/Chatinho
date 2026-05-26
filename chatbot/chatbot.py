@@ -3,6 +3,7 @@ import numpy as np
 import nltk
 from keras.models import load_model
 from nltk.stem import RSLPStemmer
+from embeddings import gerar_embedding
 
 stemmer   = RSLPStemmer()
 palavras  = pickle.load(open("palavras.pkl", "rb"))
@@ -47,13 +48,20 @@ def extrair_nome_tarefa(texto):
 def cmd_criar_tarefa(texto):
     tarefas = carregar_tarefas()
     nome    = extrair_nome_tarefa(texto)
+
+    embedding = gerar_embedding(nome).tolist()
+
     if not nome:
         print("Bot: Qual é o nome da tarefa?")
         nome = input("Você: ").strip()
     if not nome:
         print("Bot: Nenhum nome informado, tarefa não criada.")
         return
-    tarefas.append({"nome": nome, "feita": False})
+    tarefas.append({
+        "nome": nome, 
+        "feita": False,
+        "embedding": embedding
+    })
     salvar_tarefas(tarefas)
     print(f'Bot: Tarefa "{nome}" adicionada!')
 
