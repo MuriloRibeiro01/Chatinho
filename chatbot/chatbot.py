@@ -4,6 +4,14 @@ import nltk
 from keras.models import load_model
 from nltk.stem import RSLPStemmer
 from embeddings import gerar_embedding
+from semantic_search import buscar_tarefas_semelhantes
+from tasks import carregar_tarefas, salvar_tarefas
+
+contexto = {
+    "ultima_intencao": None,
+    "ultima_tarefa": None,
+    "ultima_busca": []
+  }
 
 stemmer   = RSLPStemmer()
 palavras  = pickle.load(open("palavras.pkl", "rb"))
@@ -46,24 +54,49 @@ def extrair_nome_tarefa(texto):
     return None
 
 def cmd_criar_tarefa(texto):
-    tarefas = carregar_tarefas()
-    nome    = extrair_nome_tarefa(texto)
 
-    embedding = gerar_embedding(nome).tolist()
+    tarefas = carregar_tarefas()
+
+    nome    = extrair_nome_tarefa(texto)    
 
     if not nome:
         print("Bot: Qual é o nome da tarefa?")
         nome = input("Você: ").strip()
+
     if not nome:
         print("Bot: Nenhum nome informado, tarefa não criada.")
         return
+    
+    embedding = gerar_embedding(nome).tolist()
+
     tarefas.append({
         "nome": nome, 
         "feita": False,
         "embedding": embedding
     })
+
     salvar_tarefas(tarefas)
+
+    contexto["ultima_tarefa"] = nome
+    contexto["ultima_intencao"] = "criar_tarefa"
+
     print(f'Bot: Tarefa "{nome}" adicionada!')
+
+def cmd_busca_semantica(texto):
+
+    resultados = buscar_tarefas_semelhantes(texto)
+
+    contexto["ultima_busca"] = resultados
+
+    if not resultados:
+        print("Bot: Não achei nenhuma tarefa relacionada.")
+        return
+    
+    print("Bot: Achei essas tarefas relacionadas:")
+
+    for i, r in enumerate(resultados, 1):
+        print(f"{i}, {r['tarefa']['nome']}")
+
 
 def cmd_listar_tarefas():
     tarefas = carregar_tarefas()
@@ -115,6 +148,7 @@ TASK_HANDLERS = {
     "listar_tarefas":  lambda _: cmd_listar_tarefas(),
     "concluir_tarefa": lambda _: cmd_concluir_tarefa(),
     "deletar_tarefa":  lambda _: cmd_deletar_tarefa(),
+    "buscar_tarefas_semelhantes": cmd_busca_semantica,
 }
 
 # ---------- LOOP PRINCIPAL ----------
