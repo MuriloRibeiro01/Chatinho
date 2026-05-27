@@ -1,4 +1,4 @@
-{
+{  
   "intencoes": [
     {
       "tag": "saudacao",
@@ -98,6 +98,17 @@
         "deletar tarefa", "remover tarefa", "apagar tarefa", "excluir tarefa",
         "tirar da lista", "remover da lista", "apagar da lista",
         "cancelar tarefa", "eliminar tarefa", "quero remover uma tarefa"
+      ]
+    },
+    {
+      "tag": "buscar_tarefas_semelhantes",
+      "padroes": [
+        "o que tenho sobre backend",
+        "tarefas relacionadas a python",
+        "o que tenho sobre APIs",
+        "buscar tarefas de estudo",
+        "o que tenho sobre IA",
+        "tarefas de programação"
       ]
     }
   ]
