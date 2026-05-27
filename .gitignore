@@ -185,3 +185,4 @@ config.json
 secrets.plist
 tokens.py
 credentials.json
+chatbot/tarefas.json
