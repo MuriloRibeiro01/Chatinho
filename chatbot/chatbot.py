@@ -9,7 +9,7 @@ from tasks import carregar_tarefas, salvar_tarefas
 
 contexto = {
     "ultima_intencao": None,
-    "ultima_tarefa": None,
+    "ultimas_tarefas": None,
     "ultima_busca": []
   }
 
@@ -77,7 +77,7 @@ def cmd_criar_tarefa(texto):
 
     salvar_tarefas(tarefas)
 
-    contexto["ultima_tarefa"] = nome
+    contexto["ultimas_tarefas"] = nome
     contexto["ultima_intencao"] = "criar_tarefa"
 
     print(f'Bot: Tarefa "{nome}" adicionada!')
@@ -107,6 +107,7 @@ def cmd_listar_tarefas():
     for i, t in enumerate(tarefas, 1):
         status = "✓" if t["feita"] else "○"
         print(f"  {i}. [{status}] {t['nome']}")
+    contexto["ultimas_tarefas"]
 
 def cmd_concluir_tarefa():
     tarefas   = carregar_tarefas()
