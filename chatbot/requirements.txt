@@ -1,0 +1,6 @@
+numpy
+nltk
+keras
+tensorflow
+scikit-learn
+sentence-transformers
