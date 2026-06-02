@@ -6,12 +6,7 @@ from nltk.stem import RSLPStemmer
 from embeddings import gerar_embedding
 from semantic_search import buscar_tarefas_semelhantes
 from tasks import carregar_tarefas, salvar_tarefas
-
-contexto = {
-    "ultima_intencao": None,
-    "ultimas_tarefas": None,
-    "ultima_busca": []
-  }
+from context import contexto
 
 stemmer   = RSLPStemmer()
 palavras  = pickle.load(open("palavras.pkl", "rb"))
@@ -77,7 +72,7 @@ def cmd_criar_tarefa(texto):
 
     salvar_tarefas(tarefas)
 
-    contexto["ultimas_tarefas"] = nome
+    contexto["ultima_tarefa"] = nome
     contexto["ultima_intencao"] = "criar_tarefa"
 
     print(f'Bot: Tarefa "{nome}" adicionada!')
@@ -106,8 +101,7 @@ def cmd_listar_tarefas():
     print("Bot: Suas tarefas:")
     for i, t in enumerate(tarefas, 1):
         status = "✓" if t["feita"] else "○"
-        print(f"  {i}. [{status}] {t['nome']}")
-    contexto["ultimas_tarefas"]
+        print(f"  {i}. [{status}] {t['nome']}")    
 
 def cmd_concluir_tarefa():
     tarefas   = carregar_tarefas()
@@ -144,6 +138,63 @@ def cmd_deletar_tarefa():
     except (ValueError, IndexError):
         print("Bot: Número inválido, tente novamente.")
 
+def resolver_referencia(texto):
+    
+    tarefas = contexto["ultimas_tarefas"]
+
+    if not tarefas:
+        return None
+
+    texto = texto.lower()
+
+    if "primeira" in texto and len(tarefas) >= 1:
+        return tarefas[0]
+
+    if "segunda" in texto and len(tarefas) >= 2:
+        return tarefas[1]
+    
+    if "terceira" in texto and len(tarefas) >= 3:
+        return tarefas[2]
+    
+    if "ultima" in texto or "última" in texto:
+        return tarefas[-1]
+    
+    return None
+
+def deletar_por_nome(nome_tarefa):
+    tarefas = carregar_tarefas()
+
+    for i, tarefa in enumerate(tarefas):
+
+        if tarefa["nome"] == nome_tarefa:
+
+            removida = tarefas.pop(i)
+
+            salvar_tarefas(tarefas)
+
+            print(f'Bot: Tarefa "{removida["nome"]}" deletada com sucesso!')
+
+            return
+    
+    print("Bot: Não encontrei essa tarefa.")
+
+def concluir_por_nome(nome_tarefa):
+    tarefas = carregar_tarefas()
+
+    for tarefa in tarefas:
+
+        if tarefa["nome"] == nome_tarefa:
+
+            tarefa["feita"] = True
+
+            salvar_tarefas(tarefas)
+
+            print(f'Bot: Tarefa "{nome_tarefa}" marcada como concluída!')
+
+            return
+        
+    print("Bot: Não encontrei essa tarefa.")
+
 TASK_HANDLERS = {
     "criar_tarefa":    cmd_criar_tarefa,
     "listar_tarefas":  lambda _: cmd_listar_tarefas(),
@@ -163,11 +214,38 @@ while True:
         print("Bot: Até mais!")
         break
 
+    contexto["historico"].append(msg)
+        
+    if len(contexto["historico"]) > 10:
+        contexto["historico"].pop(0)
+
     intencao, confianca = prever_intencao(msg)
+
+    print(f'Intenção capturada: "{intencao}"')
 
     if confianca < 0.7:
         print("Bot: Não entendi. Pode explicar novamente?")
         continue
+
+    if intencao == "concluir_tarefa":
+
+        contexto["ultimas_tarefas"] = carregar_tarefas()
+
+        tarefa = resolver_referencia(msg)
+
+        if tarefa:
+            concluir_por_nome(tarefa["nome"])
+            continue
+
+    elif intencao == "deletar_tarefa":
+
+        contexto["ultimas_tarefas"] = carregar_tarefas()
+
+        tarefa = resolver_referencia(msg)
+
+        if tarefa:
+            deletar_por_nome(tarefa["nome"])
+            continue
 
     if intencao in TASK_HANDLERS:
         TASK_HANDLERS[intencao](msg)
