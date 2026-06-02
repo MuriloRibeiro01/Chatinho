@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from embeddings import gerar_embedding
 from tasks import carregar_tarefas
-from chatbot import contexto
+from context import contexto
 
 def buscar_tarefas_semelhantes(texto, limite=3, treshold=0.55):
     
@@ -35,8 +35,6 @@ def buscar_tarefas_semelhantes(texto, limite=3, treshold=0.55):
                 "tarefa": tarefa,
                 "similaridade": float(similaridade)
             })
-        
-    contexto["ultima_busca"] = resultados
     
     # Ele organiza pela similaridade em ordem decrescente.
     resultados.sort(
